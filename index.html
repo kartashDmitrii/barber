@@ -1,80 +1,175 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title></title>
-  <link rel="stylesheet" type="text/css" href="style.css" charset="utf-8">
+	<meta charset="UTF-8">
+	<title>Барбершоп! - Киев</title>
+	<link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/libs.min.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script src="js/libs.min.js"></script>
+	<script src="js/main.js"></script>
+	</script>
 </head>
 <body>
-<div class="container">
-  <ul id="slides">
-    <li class="slide showing"></li>
-    <li class="slide"></li>
-    <li class="slide"></li>
-  </ul>
-  <div class="buttons">
-    <button class="controls" id="previous">&lt;</button>
+	<header id="menu">
+		<ul>
+			<li><a class="unactive">Информация</a></li>
+			<li><a class="unactive">Новости</a></li>
+			<li><a class="unactive">Прайс-лист</a></li>
+			<li><a class="unactive">Магазин</a></li>
+			<li><a class="unactive">Контакты</a></li>
 
-    <button class="controls" id="pause">&#10074;&#10074;</button>
-
-    <button class="controls" id="next">&gt;</button>
-  </div>
-</div>
-<script type="text/javascript">
-  var controls = document.querySelectorAll('.controls');
-for(var i=0; i<controls.length; i++){
-    controls[i].style.display = 'inline-block';
-}
-
-var slides = document.querySelectorAll('#slides .slide');
-var currentSlide = 0;
-var slideInterval = setInterval(nextSlide,2000);
-
-function nextSlide(){
-    goToSlide(currentSlide+1);
-}
-
-function previousSlide(){
-    goToSlide(currentSlide-1);
-}
-
-function goToSlide(n){
-    slides[currentSlide].className = 'slide';
-    currentSlide = (n+slides.length)%slides.length;
-    slides[currentSlide].className = 'slide showing';
-}
-
-
-var playing = true;
-var pauseButton = document.getElementById('pause');
-
-function pauseSlideshow(){
-    pauseButton.innerHTML = '&#9658;'; // play character
-    playing = false;
-    clearInterval(slideInterval);
-}
-
-function playSlideshow(){
-    pauseButton.innerHTML = '&#10074;&#10074;'; // pause character
-    playing = true;
-    slideInterval = setInterval(nextSlide,2000);
-}
-
-pauseButton.onclick = function(){
-    if(playing){ pauseSlideshow(); }
-    else{ playSlideshow(); }
-};
-
-var next = document.getElementById('next');
-var previous = document.getElementById('previous');
-
-next.onclick = function(){
-    pauseSlideshow();
-    nextSlide();
-};
-previous.onclick = function(){
-    pauseSlideshow();
-    previousSlide();
-};
-</script>
+		</ul>
+		<a class="login">Вход</a>
+	</header>
+	<main>
+		<img class="logo logo_big" src="img/barbershop-logo.png" oncontextmenu="return false;" alt="Barbarshop">
+		<section class="features">
+			<div class="revealator-zoomin revealator-once revealator-duration5">
+				<b>Быстро</b>
+				<p>Мы делаем свою работу быстро! Два часа пролетят незаметно и вы - счастливый обладатель стильной стрижки-минутки!</p>
+			</div>
+			<div class="revealator-zoomin revealator-delay1 revealator-once revealator-duration5">
+				<b>Круто</b>
+				<p>Забудьте, как вы стриглись раньше. Мы сделаем из вас звезду футбола или кино! Во всяком случае внешне.</p>
+			</div>
+			<div class="revealator-zoomin revealator-delay2 revealator-once revealator-duration5">
+				<b>Дорого</b>
+				<p>Наши мастера - профессионалы своего дела и не могут стоит дешево. к тому же, разве цена не дает определенный статус?</p>
+			</div>
+		</section>
+		<section class="index_content revealator-fade revealator-once revealator-duration10">
+			<div class="index_content_left">
+				<h2>Новости</h2>
+				<ul>
+					<li>
+						<p>Нам наконец завезли Ягермейстер! Теперь вы можете пропустить стаканчик во время стрижки</p>
+						<time datetime="2018-01-11">11 января</time>
+					</li>
+					<li>
+						<p>В нашей команде пополнение, Любомир "Бритва" Гамалий, обладатель множества титулов и наград пополнил наши стройные ряды</p>
+						<time datetime="2016-01-18">18 января</time>
+					</li>
+				</ul>
+				<a class="btn disabled" href="#">Все новости</a>
+			</div>
+			<div class="index_content_right">
+				<h2>Фотогалерея</h2>
+				<div class="gallery_content">
+					<ul class="slidewrapper">
+						<li class="slide"><a href="img/main_slider/photo1.jpg"><img class="slide_img" src="img/main_slider/photo1.jpg" width="286" height="164" alt=""></a></li>
+						<li class="slide"><a href="img/main_slider/photo2.jpg"><img class="slide_img" src="img/main_slider/photo2.jpg" width="286" height="164" alt=""></a></li>
+						<li class="slide"><a href="img/main_slider/photo3.jpg"><img class="slide_img" src="img/main_slider/photo3.jpg" width="286" height="164" alt=""></a></li>
+						<li class="slide"><a href="img/main_slider/photo4.jpg"><img class="slide_img" src="img/main_slider/photo4.jpg" width="286" height="164" alt=""></a></li>
+						<li class="slide"><a href="img/main_slider/photo5.jpg"><img class="slide_img" src="img/main_slider/photo5.jpg" width="286" height="164" alt=""></a></li>
+						<li class="slide"><a href="img/main_slider/photo6.jpg"><img class="slide_img" src="img/main_slider/photo6.jpg" width="286" height="164" alt=""></a></li>
+					</ul>
+				</div>
+				<div>
+				<button class="btn gallery_prev">Назад</button>
+				<button class="btn gallery_next">Вперёд</button>
+				</div>
+			</div>
+		</section>
+		<section class="index_content revealator-fade revealator-once revealator-duration10"">
+			<div class="index_content_left">
+				<h2>Контактная информация</h2>
+					<p>
+						Барбершоп "Бородинский"<br>
+						Адрес: г.Киев, Б.Кольцова, д. 14у<br>
+						Телефон: +38 (093) 666-02-66
+					</p>
+					<p>
+						Время работы:<br>
+						пн - пт: с 10:00 до 22:00<br>
+						сб - вс: с 10:00 до 19:00
+					</p>
+					<div class="info_button">
+					<a class="btn popup_map">Как проехать</a>
+					<a class="btn disabled">Обратная связь</a>
+					</div>
+			</div>
+			<div class="index_content_right">
+				<h2>Записаться</h2>
+				<p>Укажите желаемую дату и время и мы свяжемся с вами для подтверждения брони</p>
+				<form class="appointment_form" action="https://echo.htmlacademy.ru" method="post">
+					<div class="block">
+					<label for="date">Дата</label>
+					<input type="tel" class="date" name="date" value="" placeholder="00/00/0000">
+					</div>
+					<div class="block">
+					<label for="time">Врмея</label>
+					<input type="tel" class="time" name="time" value="" placeholder="00:00">
+					</div>
+					<div class="block">
+					<label for="name">Ваше имя</label>
+					<input type="text" name="name" value="" placeholder="Barbershop">
+					</div>
+					<div class="block">
+					<label for="phone">Телефон</label>
+					<input type="tel" class="phone" name="phone" value="" placeholder="(093)666-02-66">
+					</div>
+				<button class="btn" type="submit">Отправить</button>
+				</form>
+			</div>
+		</section>
+	</main>
+	<footer>
+			<section class="footer_contacts">
+				Барбершоп "Бородинский"<br>
+				Адрес: г.Киев, Б.Кольцова, д. 14у<br>
+				<a class="popup_map">Как нас найти?</a><br>
+				Телефон: +38 (093) 666-02-66
+			</section>
+			<section class="footer_social">
+				<p>Давайте дружить!</p>
+				<a class="social_btn telegram" href="https://telegram.me/Marshall_Balls"><i class="fab fa-telegram-plane"></i><span></span></a>
+				<a class="social_btn facebook" href="https://www.facebook.com/100003914769863"><i class="fab fa-facebook-f"></i><span></span></a>
+				<a class="social_btn instagram" href="https://www.instagram.com/bobgamaliy/"><i class="fab fa-instagram"></i><span></span></a>
+			</section>
+			<section class="footer_copyright">
+				<p>Разработано:</p>
+				<a class="btn disabled" href="#">4appa&co</a>
+			</section>
+	</footer>
+	<div class="modal_frame">
+		<span class="modal_close">X</span>
+		<ul class="modal_links">
+			<li class="signin form_active">Вход</li>
+			<li class="signup">Регистрация</li>
+		</ul>
+		<div class="modal_form">
+			<div class="login_form">
+				<form action="https://echo.htmlacademy.ru" method="post">
+					<label for="username">Логин</label>
+					<input type="text" name="username" placeholder="">
+					<label for="password">Пароль</label>
+					<input type="password" name="password" placeholder="">
+					<div class="cellar">
+						<label class="checkbox_spacing">
+							<input type="checkbox">
+							<span class="custom_checkbox"></span>
+							<p>Запомнить меня</p>
+						</label>
+						<a href="">Забыл пароль</a>
+					</div>
+					<button class="btn" type="submit">Вход</button>
+				</form>
+			</div>
+			<div class="register_form">
+				<label for="email">E-Mail</label>
+				<input type="text" name="email" placeholder="">
+				<label for="username">Логин</label>
+				<input type="text" name="username" placeholder="">
+				<label for="password">Пароль</label>
+				<input type="password" name="password" placeholder="">
+				<label for="password">Подтвердите пароль</label>
+				<input type="password" name="confirm_password" placeholder="">
+				<button class="btn" type="submit">Регистрация</button>
+			</div>
+		</div>
+	</div>
+	<div class="overlay"></div>
+	<div class="not_ie"></div>
 </body>
 </html>
